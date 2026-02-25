@@ -251,6 +251,14 @@ GetStrlen:
 
 _start:
 ;   instructions 
+	call    readNum     ; دریافت عدد اول (در rax ذخیره می‌شود)
+    mov     r10, rax    ; کپی کردن عدد اول در r10
+    
+    call    readNum     ; دریافت عدد دوم (در rax ذخیره می‌شود)
+    add     rax, r10    
+    
+    call    writeNum    ; چاپ نتیجه روی صفحه
+    call    newLine
 
   Exit:
     mov     rax, sys_exit
